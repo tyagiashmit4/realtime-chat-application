@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { io } from "socket.io-client";
 import MessageList from "./MessageList";
+import img1 from "../assets/back1.jpg";
 import {
     Box,
     TextField,
@@ -42,8 +43,8 @@ function Chat({ user }) {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                height: "100vh",
-                backgroundImage: "url('https://www.google.com/imgres?q=background%20images&imgurl=https%3A%2F%2Fimg.freepik.com%2Ffree-photo%2Fcolorful-abstract-textured-background-design_53876-108265.jpg&imgrefurl=https%3A%2F%2Fwww.freepik.com%2Fphotos%2Fbackground&docid=l1bYyUep8uz72M&tbnid=Dajv4MPnn4u_JM&vet=12ahUKEwiE9cunj-2KAxVUTGwGHZeIBG0QM3oECBkQAA..i&w=626&h=417&hcb=2&ved=2ahUKEwiE9cunj-2KAxVUTGwGHZeIBG0QM3oECBkQAA')",
+                height: "100vh", 
+                backgroundImage: `url(${img1})`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
             }}
