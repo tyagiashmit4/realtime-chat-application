@@ -48,6 +48,7 @@ node server.js
 -Node.js
 -Express.js
 -Socket.IO
+
 #Notes
 Login Page: Users must enter a valid email and password to log in.
 Chat Page: After logging in, users can send and receive messages in real-time.
