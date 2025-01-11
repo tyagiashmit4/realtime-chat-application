@@ -1,44 +1,31 @@
 import React from "react";
-import { Box, Typography } from "@mui/material";
 
 function MessageList({ messages, user }) {
-    return (
-        <Box
-            sx={{
-                flex: 1,
-                overflowY: "auto",
-                padding: "10px",
-                backgroundColor: "#e7eaf3",
-            }}
+  return (
+    <div style={{ flexGrow: 1, overflowY: "auto", padding: "10px" }}>
+      {messages.map((message, index) => (
+        <div
+          key={index}
+          style={{
+            textAlign: message.user === user ? "right" : "left",
+            marginBottom: "10px",
+          }}
         >
-            {messages.map((msg, idx) => (
-                <Box
-                    key={idx}
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: msg.user === user ? "flex-end" : "flex-start",
-                        marginBottom: "10px",
-                    }}
-                >
-                    <Typography
-                        variant="body2"
-                        sx={{
-                            backgroundColor: msg.user === user ? "#6a5acd" : "#fff",
-                            color: msg.user === user ? "#fff" : "#000",
-                            padding: "8px 12px",
-                            borderRadius: "10px",
-                            boxShadow: "0px 1px 3px rgba(0,0,0,0.2)",
-                            maxWidth: "70%",
-                            wordWrap: "break-word",
-                        }}
-                    >
-                        <strong>{msg.user}</strong>: {msg.text}
-                    </Typography>
-                </Box>
-            ))}
-        </Box>
-    );
+          <div
+            style={{
+              display: "inline-block",
+              padding: "8px",
+              borderRadius: "10px",
+              backgroundColor: message.user === user ? "#3f51b5" : "#ccc",
+              color: message.user === user ? "#fff" : "#000",
+            }}
+          >
+            <strong>{message.user}:</strong> {message.text}
+          </div>
+        </div>
+      ))}
+    </div>
+  );
 }
 
 export default MessageList;
